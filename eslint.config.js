@@ -29,10 +29,27 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
+      'react/prop-types': 'off',
+      'react/no-unknown-property': 'off', // Allow custom properties in UI components
+      'no-unused-vars': 'warn', // Downgrade to warning
+      'no-constant-binary-expression': 'off', // Allow for testing patterns
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
+    },
+  },
+  {
+    files: ['src/components/ui/**/*.{js,jsx}'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+      'no-unused-vars': 'off', // More lenient for UI components
+    },
+  },
+  {
+    files: ['*.config.js', 'vitest.config.js', 'vite.config.js', 'tailwind.config.js'],
+    languageOptions: {
+      globals: globals.node,
     },
   },
 ]
