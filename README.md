@@ -31,7 +31,17 @@ cd champions-hub
 
 # Install dependencies
 npm install
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your actual Base44 App ID
 ```
+
+### Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_BASE44_APP_ID` | Your Base44 application ID (required) |
 
 ### Available Scripts
 
